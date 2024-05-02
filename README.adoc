@@ -1,0 +1,14 @@
+= Beancount Generator
+
+A browser extension to generate
+https://beancount.github.io/[Beancount] entries from various websites.
+Currently only Chase cards and accounts are supported.
+
+== Usage
+
+Go to the addon options page and setup all the accounts and matchers.
+
+=== Chase
+
+In the Chase dashboard page, click an account, and sidebar should
+pop up. You should see a button labeled “Bean!” some where. Click it.

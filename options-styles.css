@@ -1,0 +1,252 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: unset;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ========== Actual styles ======================================> */
+
+:root
+{
+    --color-bg: #c0c0c0;
+    --color-fg: black;
+    --color-border-dark-1: #808080;
+    --color-border-dark-2: black;
+    --color-border-light-1: #dfdfdf;
+    --color-border-light-2: white;
+}
+
+html
+{
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+input[type="text"], textarea
+{
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: inset -1px -1px var(--color-border-light-2),
+                inset 1px 1px var(--color-border-dark-1),
+                inset -2px -2px var(--color-border-light-1),
+                inset 2px 2px var(--color-border-dark-2);
+    width: 100%;
+    padding: 3px 4px;
+    font-family: monospace;
+}
+
+button
+{
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: inset -1px -1px var(--color-border-dark-2),
+                inset 1px 1px var(--color-border-light-1),
+                inset -2px -2px var(--color-border-dark-1),
+                inset 2px 2px var(--color-border-light-2);
+    background: var(--color-bg);
+    min-height: 23px;
+    min-width: 75px;
+    padding: 0 12px;
+    text-align: center;
+}
+
+button.IconButton
+{
+    padding: 4px;
+    min-width: unset;
+    min-height: unset;
+}
+
+button.FloatButton
+{
+    padding: 4px;
+    min-width: unset;
+    min-height: unset;
+    box-shadow: none;
+}
+
+button.FloatButton:hover
+{
+    padding: 4px;
+    min-width: unset;
+    min-height: unset;
+    box-shadow: inset 1px 1px var(--color-border-light-1),
+                inset -1px -1px var(--color-border-dark-1);
+}
+
+button:active, button.FloatButton:active
+{
+    box-shadow: inset -1px -1px var(--color-border-light-2),
+                inset 1px 1px var(--color-border-dark-1),
+                inset -2px -2px var(--color-border-light-1),
+                inset 2px 2px var(--color-border-dark-2);
+}
+
+hr
+{
+    border: none;
+    border-top: solid var(--color-border-dark-1) 1px;
+    border-bottom: solid var(--color-border-light-1) 1px;
+}
+
+.Window
+{
+    padding: 1ex;
+}
+
+.ButtonRow
+{
+    display: flex;
+    justify-content: right;
+    gap: 1ex;
+    margin: 1ex 0;
+}
+
+.ButtonRowLeft
+{
+    text-align: Left;
+    margin-top: 1ex;
+}
+
+.Toolbar
+{
+    display: flex;
+    border-bottom: solid var(--color-border-dark-1) 1px;
+    box-shadow: 0px 1px var(--color-border-light-1);
+    position: relative;
+    left: -1ex;
+    top: -1ex;
+    width: calc(100% + 2ex);
+    padding: 2px;
+}
+
+.Filler
+{
+    flex-grow: 1;
+}
+
+.NotList
+{
+    list-style: none;
+    padding: 0px;
+}
+
+.MatcherList > li
+{
+    display: block;
+    margin: 1em 0px;
+}
+
+.LabeledInputGroup
+{
+    width: 100%;
+    border: none;
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: baseline;
+    row-gap: 0.5ex;
+    column-gap: 1ex;
+}
+
+.Label
+{
+    white-space: nowrap;
+    text-align: right;
+}
+
+.LabeledPanel
+{
+    border-top: solid var(--color-border-light-1) 1px;
+    border-right: solid var(--color-border-dark-1) 1px;
+    border-bottom: solid var(--color-border-dark-1) 1px;
+    border-left: solid var(--color-border-light-1) 1px;
+
+    box-shadow: 1px 1px var(--color-border-light-1),
+                -1px -1px var(--color-border-dark-1);
+    padding: 1ex;
+    padding-top: 0px;
+    margin: 2ex 0px;
+}
+
+.LabeledPanel > h3, .LabeledPanel > h2
+{
+    font-weight: normal;
+    display: inline-block;
+    position: relative;
+    top: calc(-0.5em);
+    left: 1ex;
+    background-color: var(--color-bg);
+    padding: 0px 1ex 0px 1ex;
+    margin: 0px;
+}
+
+.Dialog
+{
+    background-color: var(--color-bg);
+    box-shadow: inset -1px -1px var(--color-border-dark-2),
+                inset 1px 1px var(--color-border-light-1),
+                inset -2px -2px var(--color-border-dark-1),
+                inset 2px 2px var(--color-border-light-2);
+    padding: 1ex;
+    width: fit-content;
+    block-size: fit-content;
+
+    /* Center align */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Dialog textarea
+{
+    width: calc(100vw - 2ex - 10px);
+    height: calc(100vh - 2ex - 64px);
+}
