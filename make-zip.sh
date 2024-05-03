@@ -6,4 +6,4 @@ if [[ -e ${TARGET} ]]; then
     rm ${TARGET}
 fi
 
-zip ${TARGET} *.js *.html manifest.json icon.svg
+zip ${TARGET} *.js *.html *.css manifest.json icon.svg

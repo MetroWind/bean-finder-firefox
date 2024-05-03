@@ -178,6 +178,15 @@ class RecordProcessor
                 break;
             }
         }
+
+        if(result.payee == "")
+        {
+            // Payee is empty in the matcher. This is usually a
+            // wildcard rule. Restore the payee from the bank, and
+            // mark it incorrect.
+            result.payee = record.payee;
+            result.finalized = false;
+        }
         return result;
     }
 }

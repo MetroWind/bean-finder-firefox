@@ -1,17 +1,3 @@
-// Configuration format:
-//
-// {
-//     "accounts_chase": [{
-//         "pattern_card_title": "",
-//         "account_paying": "",
-//         "payee_matchers": [{
-//             "pattern_payee": "",
-//             "pattern_category": "",
-//             "account_expanse": ""
-//         }]
-//     }]
-// }
-
 let e = React.createElement;
 
 function LabeledInput({label, initial_text, on_change})
