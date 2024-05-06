@@ -84,13 +84,13 @@ class ChaseRecordsReader
         }
         else
         {
-            return cat.attributes.text.value;
+            return cat.attributes.text.value.trim();
         }
     }
 
     #readAccountType(row)
     {
-        return row.querySelector(".type > .column-info").textContent;
+        return row.querySelector(".type > .column-info").textContent.trim();
     }
 
     readOrders()
@@ -109,7 +109,7 @@ class ChaseRecordsReader
             let rec = new ChaseRecord();
             let date_str = row.querySelector(".date > .column-info").textContent;
             rec.date = new Date(Date.parse(date_str));
-            rec.payee = row.querySelector(".description > .column-info").textContent;
+            rec.payee = row.querySelector(".description > .column-info").textContent.trim();
             if(type == "CreditCard")
             {
                 rec.category = this.#readCreditCardCategory(row);
@@ -121,7 +121,7 @@ class ChaseRecordsReader
             }
             rec.price = cleanUpPrice(
                 row.querySelector(".amount > .column-info").textContent);
-            rec.account_title = account_title;
+            rec.account_title = account_title.trim();
             records.push(rec);
         }
 
