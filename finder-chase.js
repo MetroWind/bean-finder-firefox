@@ -207,7 +207,7 @@ ${order.date.getDate().toString().padStart(2, '0')}`;
             status_symbol = "!";
         }
         lines.push(`${date} ${status_symbol} "${order.payee}" "${order.description}"`);
-        if(order.finalized)
+        if(order.expense_account != "")
         {
             let price = order.price;
             if(!order.negative)
